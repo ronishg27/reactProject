@@ -38,7 +38,7 @@ function TextForm(props: any) {
         <textarea
           className="form-control"
           id="myBox"
-          rows="8"
+          rows={10}
           value={text}
           onChange={handleOnChange}
         ></textarea>
@@ -54,9 +54,12 @@ function TextForm(props: any) {
       <div className="container my-3">
         <h3>Your text summary.</h3>
         <p>
-          {countWords(text)} words, {text.length} characters
           {/* {text.split(" ").length} words, {text.length} characters */}
+          {countWords(text)} words, {text.length} characters
         </p>
+        <p> {countWords(text) * 0.008} minutes read.</p>
+        <h2>Preview</h2>
+        <p>{text} </p>
       </div>
     </>
   );
