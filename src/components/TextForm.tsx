@@ -29,17 +29,18 @@ function TextForm(props: any) {
     setText(event.target.value);
   };
 
-  const [text, setText] = useState("Enter your text here.");
+  const [text, setText] = useState("");
 
   return (
     <>
-      <h3>{props.heading}</h3>
-      <div className="mb-3">
+      <h2>{props.heading}</h2>
+      <div className="mb-3 mt-3">
         <textarea
-          className="form-control"
+          className="form-control mb-2"
           id="myBox"
-          rows={10}
+          rows={8}
           value={text}
+          placeholder="Enter your text here."
           onChange={handleOnChange}
         ></textarea>
 
@@ -57,8 +58,11 @@ function TextForm(props: any) {
           {/* {text.split(" ").length} words, {text.length} characters */}
           {countWords(text)} words, {text.length} characters
         </p>
-        <p> {countWords(text) * 0.008} minutes read.</p>
-        <h2>Preview</h2>
+        <p>
+          {" "}
+          <strong> Reading time:</strong> {countWords(text) * 0.008} minutes
+        </p>
+        <h3>Preview</h3>
         <p>{text} </p>
       </div>
     </>
