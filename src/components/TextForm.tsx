@@ -38,6 +38,10 @@ function TextForm(props: any) {
           Convert to Lowercase
         </button>
       </div>
+      <div className="container">
+        <h3>Your text summary.</h3>
+        <p>343 words, 3423 characters</p>
+      </div>
     </>
   );
 }
