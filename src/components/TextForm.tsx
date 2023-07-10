@@ -11,6 +11,19 @@ function TextForm(props: any) {
     setText(text.toLowerCase());
   };
 
+  function countWords(text: string) {
+    if (text.length === 0) {
+      return 0;
+    }
+    // Trim leading and trailing white spaces
+    text = text.trim();
+
+    // Split the text into an array of words
+    const words = text.split(/\s+/);
+
+    // Return the count of words
+    return words.length;
+  }
   const handleOnChange = (event: any) => {
     // console.log("OnChange was triggered");
     setText(event.target.value);
@@ -30,7 +43,7 @@ function TextForm(props: any) {
           onChange={handleOnChange}
         ></textarea>
 
-        <button className="btn btn-primary" onClick={handleUpClick}>
+        <button className="btn btn-primary mx-1" onClick={handleUpClick}>
           Convert to uppercase
         </button>
 
@@ -38,9 +51,12 @@ function TextForm(props: any) {
           Convert to Lowercase
         </button>
       </div>
-      <div className="container">
+      <div className="container my-3">
         <h3>Your text summary.</h3>
-        <p>343 words, 3423 characters</p>
+        <p>
+          {countWords(text)} words, {text.length} characters
+          {/* {text.split(" ").length} words, {text.length} characters */}
+        </p>
       </div>
     </>
   );
