@@ -3,22 +3,24 @@ function About() {
   const [myStyle, setMyStyle] = useState({
     color: "black",
     backgroundColor: "white",
+    border: "1px solid white",
   });
   const [btnText, setBtnText] = useState("Enable Dark Mode");
 
-  const toggleStyle = () => {
+  const toggleStyle = (): void => {
     if (myStyle.color == "white") {
       setMyStyle({
         color: "black",
         backgroundColor: "white",
+        border: "1px solid white",
       })
       setBtnText("Enable Dark Mode");
     }
     else {
       setMyStyle({
-        border: '1px solid white',
         color: "white",
         backgroundColor: "black",
+        border: "1px solid white",
       })
       setBtnText("Enable Light Mode");
     }
